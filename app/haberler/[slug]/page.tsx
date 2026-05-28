@@ -48,28 +48,29 @@ export default async function HaberDetayPage({
         <time dateTime={haber.date} className="mb-3 block text-sm text-muted">
           {formatted}
         </time>
-        <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
+        <h1 className="mb-6 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
           {haber.title}
         </h1>
+
+        {haber.coverImage?.asset?.url && (
+          <div className="mb-6 overflow-hidden rounded-lg">
+            <Image
+              src={haber.coverImage.asset.url}
+              alt={haber.coverImage.alt ?? haber.title}
+              width={800}
+              height={450}
+              className="w-full object-cover"
+              priority
+            />
+          </div>
+        )}
+
         {haber.summary && (
-          <p className="mt-4 text-lg leading-relaxed text-muted">
+          <p className="text-lg leading-relaxed text-muted">
             {haber.summary}
           </p>
         )}
       </header>
-
-      {haber.coverImage?.asset?.url && (
-        <div className="mb-10 overflow-hidden rounded-lg">
-          <Image
-            src={haber.coverImage.asset.url}
-            alt={haber.coverImage.alt ?? haber.title}
-            width={800}
-            height={450}
-            className="w-full object-cover"
-            priority
-          />
-        </div>
-      )}
 
       {haber.content && haber.content.length > 0 && (
         <div>

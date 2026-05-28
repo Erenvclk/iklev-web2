@@ -28,6 +28,7 @@ export default async function HaberlerPage() {
               title={haber.title}
               summary={haber.summary}
               date={haber.date}
+              coverImage={haber.coverImage}
             />
           ))}
         </div>

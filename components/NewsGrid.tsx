@@ -6,6 +6,10 @@ type NewsItem = {
   title: string;
   summary: string;
   date: string;
+  coverImage?: {
+    asset: { url: string };
+    alt?: string;
+  };
 };
 
 type NewsGridProps = {
