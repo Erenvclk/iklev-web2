@@ -43,7 +43,7 @@ export default function Navbar() {
         aria-label="Ana navigasyon"
       >
         {/* Logo */}
-        <Link href="/" className="flex flex-col leading-tight" aria-label="İKLEV Ana Sayfa">
+        <Link href="/" className="flex flex-col leading-tight">
           <span className="text-xl font-bold tracking-tight text-accent">İKLEV</span>
           <span className="text-[11px] font-normal text-muted tracking-wide">
             İzmir Karşıyaka Lisesi Eğitim Vakfı

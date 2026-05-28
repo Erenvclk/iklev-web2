@@ -48,7 +48,7 @@ export default function NewsCard({ slug, title, summary, date, coverImage }: New
         <Link
           href={`/haberler/${slug}`}
           className="mt-auto text-sm font-medium text-accent transition-opacity hover:opacity-70"
-          aria-label={`${title} haberini oku`}
+          aria-label={`Devamını gör: ${title}`}
         >
           Devamını gör →
         </Link>

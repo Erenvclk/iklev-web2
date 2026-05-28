@@ -19,7 +19,7 @@ export default function DonateBar() {
             Bağışlarınız doğrudan yetenekli ve çalışkan, ancak maddi olanakları
             kısıtlı Karşıyaka Liseli öğrencilere burs olarak ulaşıyor.
           </p>
-          <p className="mt-3 text-xs text-background/40">
+          <p className="mt-3 text-xs text-background/60">
             IBAN: TR40 0001 2009 7100 0016 0000 61 — Halkbank Karşıyaka
           </p>
         </div>
