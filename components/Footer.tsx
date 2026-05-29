@@ -16,13 +16,15 @@ export default function Footer() {
     >
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row">
         <div className="flex items-center gap-2.5">
-          <Image
-            src="/logo.png"
-            alt="İKLEV logosu"
-            width={28}
-            height={28}
-            className="h-7 w-7 opacity-70"
-          />
+          <div className="relative h-7 w-7 overflow-hidden rounded-full opacity-70">
+            <Image
+              src="/iklev-logo.jpg"
+              alt="İKLEV logosu"
+              fill
+              className="object-cover"
+              style={{ objectPosition: "75% center" }}
+            />
+          </div>
           <p className="text-sm text-muted">
             İKLEV Vakfı © {new Date().getFullYear()}
           </p>

@@ -43,6 +43,19 @@ export default async function VakfimizPage() {
         </p>
       </div>
 
+      {/* İKLEV Logosu */}
+      <div className="mb-16 flex justify-start">
+        <div className="relative h-32 w-32 overflow-hidden rounded-full border border-border shadow-sm">
+          <Image
+            src="/iklev-logo.jpg"
+            alt="İKLEV — İzmir Karşıyaka Lisesi Eğitim Vakfı logosu"
+            fill
+            className="object-cover"
+            style={{ objectPosition: "75% center" }}
+          />
+        </div>
+      </div>
+
       {/* Misyon alıntısı */}
       <section className="mb-20" aria-labelledby="mission-heading">
         <h2 id="mission-heading" className="sr-only">Misyon</h2>
@@ -74,6 +87,18 @@ export default async function VakfimizPage() {
               </li>
             ))}
           </ol>
+          <figure className="mt-8 overflow-hidden rounded-lg">
+            <Image
+              src="/genel-kurul-2021.jpg"
+              alt="İKLEV 25. Seçimli Genel Kurul toplantısı, Mart 2021"
+              width={600}
+              height={400}
+              className="w-full object-cover"
+            />
+            <figcaption className="mt-2 text-xs text-muted">
+              25. Seçimli Genel Kurul, Mart 2021 — Karşıyaka Lisesi
+            </figcaption>
+          </figure>
         </section>
 
         {/* Yönetim Kurulu */}

@@ -45,14 +45,16 @@ export default function Navbar() {
       >
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
-          <Image
-            src="/logo.png"
-            alt="İKLEV — İzmir Karşıyaka Lisesi Eğitim Vakfı"
-            width={40}
-            height={40}
-            className="h-10 w-10"
-            priority
-          />
+          <div className="relative h-10 w-10 overflow-hidden rounded-full">
+            <Image
+              src="/iklev-logo.jpg"
+              alt="İKLEV — İzmir Karşıyaka Lisesi Eğitim Vakfı"
+              fill
+              className="object-cover"
+              style={{ objectPosition: "75% center" }}
+              priority
+            />
+          </div>
           <div className="flex flex-col leading-tight">
             <span className="text-xl font-bold tracking-tight text-accent">İKLEV</span>
             <span className="text-[11px] font-normal text-muted tracking-wide">
