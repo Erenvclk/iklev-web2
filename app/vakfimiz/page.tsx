@@ -11,10 +11,13 @@ export const metadata: Metadata = {
 export const revalidate = 3600;
 
 const milestones = [
-  { year: "1996", text: "Vakıf, 25 Nisan 1996'da İzmir Karşıyaka'da kuruldu." },
+  { year: "1914", text: "Karşıyaka Lisesi'nin temelleri, Karşıyaka Kız Muallim Mektebi'nin kuruluşuna dayanmaktadır." },
+  { year: "1945", text: "Okul, bugünkü adı ve yapısıyla öğretime başladı." },
+  { year: "1996", text: "Fikret Sezer'in emekli ödeneğini koşullu bağış olarak aktarmasıyla ilham alan 84 kurucu üye, vakfı 25 Nisan 1996'da İzmir Karşıyaka'da kurdu." },
+  { year: "2000", text: "İlk Vefa Günü düzenlendi; mezunları bir araya getiren bu etkinlik her yıl sürdürülmektedir." },
   { year: "2000'ler", text: "Burs programları genişletildi, her yıl düzenli olarak onlarca öğrenciye destek sağlandı." },
   { year: "2010'lar", text: "Okul altyapı projeleri başlatıldı; kütüphane ve laboratuvar yenilemeleri gerçekleştirildi." },
-  { year: "2016", text: "Vakfın 20. kuruluş yılı kutlandı, mezun buluşması düzenlendi." },
+  { year: "2021", text: "Yaşar Aksoy Sokak No:83 D.1 adresinde vakfın idari merkezi açıldı." },
   { year: "2026", text: "200'ün üzerinde üyesiyle faaliyetlerini sürdürmektedir." },
 ];
 
@@ -33,8 +36,10 @@ export default async function VakfimizPage() {
           Vakfımız hakkında
         </h1>
         <p className="text-base leading-relaxed text-muted">
-          İzmir&apos;de bulunan üç lise eğitim vakfından biri olarak 200&apos;ün
-          üzerinde üyemizle öğrencilerimizin yanındayız.
+          Tarih öğretmeni Fikret Sezer&apos;in emekli ödeneğini vakfa koşullu
+          bağış olarak bırakmasıyla ilham alan 84 kurucu üye tarafından
+          kurulan İKLEV; İzmir&apos;de bulunan üç lise eğitim vakfından biri
+          olarak 200&apos;ün üzerinde üyesiyle öğrencilerimizin yanındadır.
         </p>
       </div>
 
