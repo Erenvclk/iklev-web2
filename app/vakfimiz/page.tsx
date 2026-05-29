@@ -43,19 +43,6 @@ export default async function VakfimizPage() {
         </p>
       </div>
 
-      {/* İKLEV Logosu */}
-      <div className="mb-16 flex justify-start">
-        <div className="relative h-32 w-32 overflow-hidden rounded-full border border-border shadow-sm">
-          <Image
-            src="/iklev-logo.jpg"
-            alt="İKLEV — İzmir Karşıyaka Lisesi Eğitim Vakfı logosu"
-            fill
-            className="object-cover"
-            style={{ objectPosition: "75% center" }}
-          />
-        </div>
-      </div>
-
       {/* Misyon alıntısı */}
       <section className="mb-20" aria-labelledby="mission-heading">
         <h2 id="mission-heading" className="sr-only">Misyon</h2>
