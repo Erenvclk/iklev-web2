@@ -7,21 +7,45 @@ export const metadata: Metadata = {
     "İKLEV burs programları, başvuru koşulları ve gerekli belgeler hakkında bilgi.",
 };
 
-const requirements = [
-  "İzmir Karşıyaka Lisesi öğrencisi olmak",
-  "Maddi desteğe ihtiyaç duymak",
-  "Akademik başarı koşullarını sağlamak",
-  "Başvuru formunu eksiksiz doldurmak",
-  "Gerekli belgeleri teslim etmek",
+const bursTypes = [
+  {
+    baslik: "Orta Öğretim Bursu",
+    aciklama: "Karşıyaka Lisesi'nde öğrenim gören, maddi desteğe ihtiyaç duyan başarılı öğrencilere verilir.",
+    donem: "9 ay (Ekim–Haziran)",
+    basvuru: "30 Ağustos – 30 Eylül",
+  },
+  {
+    baslik: "Yüksek Öğretim Bursu",
+    aciklama: "Karşıyaka Lisesi mezunu olup üniversitede öğrenim gören öğrencilere verilir.",
+    donem: "9 ay (Ekim–Haziran)",
+    basvuru: "30 Ağustos – 30 Eylül",
+  },
+  {
+    baslik: "Başarı Destek Bursu",
+    aciklama: "Akademik, sportif veya sanatsal alanda üstün başarı gösteren öğrencilere durum bazında verilir.",
+    donem: "Durum bazında belirlenir",
+    basvuru: "Yıl içinde herhangi bir zamanda",
+  },
 ];
 
-const documents = [
+const ortaOgretimBelgeleri = [
+  "Başvuru formu (imzalı)",
   "Nüfus cüzdanı fotokopisi",
   "Öğrenci belgesi",
-  "Son dönem karne / not belgesi",
-  "Aile gelir durumunu gösteren belge",
-  "İkametgah belgesi",
+  "Son dönem karne fotokopisi",
+  "Aile gelir durumunu gösteren belge (maaş bordrosu, SGK dökümü vb.)",
+  "İkametgâh belgesi",
+  "Sosyal güvence bilgileri",
+];
+
+const yuksekOgretimBelgeleri = [
   "Başvuru formu (imzalı)",
+  "Nüfus cüzdanı fotokopisi",
+  "Öğrenci belgesi",
+  "Güncel transkript",
+  "Sabıka kaydı",
+  "Aile gelir durumunu gösteren belge",
+  "İkametgâh belgesi",
 ];
 
 export default function BurslarPage() {
@@ -38,60 +62,93 @@ export default function BurslarPage() {
         </h1>
         <p className="text-base leading-relaxed text-muted">
           İKLEV olarak her yıl maddi olanakları kısıtlı, başarılı Karşıyaka
-          Liseli öğrencilere burs desteği sağlıyoruz.
+          Liseli öğrencilere burs desteği sağlıyoruz. Burs miktarları her yıl
+          Ekim ayı Yönetim Kurulu toplantısında belirlenir.
         </p>
       </div>
 
-      <div className="grid gap-16 lg:grid-cols-2">
+      {/* Burs Türleri */}
+      <section aria-labelledby="types-heading" className="mb-20">
+        <h2
+          id="types-heading"
+          className="mb-8 text-2xl font-bold tracking-tight text-foreground"
+        >
+          Burs türleri
+        </h2>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {bursTypes.map((burs) => (
+            <div key={burs.baslik} className="rounded-lg border border-border p-6">
+              <h3 className="mb-2 font-semibold text-foreground">{burs.baslik}</h3>
+              <p className="mb-4 text-sm leading-relaxed text-muted">{burs.aciklama}</p>
+              <dl className="space-y-1 text-xs text-muted">
+                <div className="flex gap-2">
+                  <dt className="font-medium text-foreground">Süre:</dt>
+                  <dd>{burs.donem}</dd>
+                </div>
+                <div className="flex gap-2">
+                  <dt className="font-medium text-foreground">Başvuru:</dt>
+                  <dd>{burs.basvuru}</dd>
+                </div>
+              </dl>
+            </div>
+          ))}
+        </div>
+      </section>
 
-        {/* Başvuru Koşulları */}
-        <section aria-labelledby="requirements-heading">
-          <h2
-            id="requirements-heading"
-            className="mb-6 text-xl font-bold tracking-tight text-foreground"
-          >
-            Başvuru koşulları
-          </h2>
-          <ul className="space-y-3" role="list">
-            {requirements.map((req, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <span
-                  className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent-light text-xs font-bold text-accent"
-                  aria-hidden="true"
-                >
-                  {i + 1}
-                </span>
-                <span className="text-sm leading-relaxed text-muted">{req}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
+      {/* Gerekli Belgeler */}
+      <section aria-labelledby="documents-heading" className="mb-20">
+        <h2
+          id="documents-heading"
+          className="mb-8 text-2xl font-bold tracking-tight text-foreground"
+        >
+          Başvuru belgeleri
+        </h2>
+        <div className="grid gap-10 lg:grid-cols-2">
 
-        {/* Gerekli Belgeler */}
-        <section aria-labelledby="documents-heading">
-          <h2
-            id="documents-heading"
-            className="mb-6 text-xl font-bold tracking-tight text-foreground"
-          >
-            Gerekli belgeler
-          </h2>
-          <ul className="space-y-3" role="list">
-            {documents.map((doc, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <span
-                  className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
-                  aria-hidden="true"
-                />
-                <span className="text-sm leading-relaxed text-muted">{doc}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      </div>
+          <div>
+            <h3 className="mb-4 text-base font-semibold text-foreground">
+              Orta Öğretim Başvurusu
+            </h3>
+            <ul className="space-y-2.5" role="list">
+              {ortaOgretimBelgeleri.map((doc, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span
+                    className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent-light text-xs font-bold text-accent"
+                    aria-hidden="true"
+                  >
+                    {i + 1}
+                  </span>
+                  <span className="text-sm leading-relaxed text-muted">{doc}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="mb-4 text-base font-semibold text-foreground">
+              Yüksek Öğretim Başvurusu
+            </h3>
+            <ul className="space-y-2.5" role="list">
+              {yuksekOgretimBelgeleri.map((doc, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span
+                    className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent-light text-xs font-bold text-accent"
+                    aria-hidden="true"
+                  >
+                    {i + 1}
+                  </span>
+                  <span className="text-sm leading-relaxed text-muted">{doc}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+      </section>
 
       {/* Başvuru CTA */}
       <section
-        className="mt-16 rounded-lg border border-border bg-surface p-8 md:p-12"
+        className="rounded-lg border border-border bg-surface p-8 md:p-12"
         aria-labelledby="apply-heading"
       >
         <h2
@@ -101,9 +158,10 @@ export default function BurslarPage() {
           Başvuru için iletişime geç
         </h2>
         <p className="mb-6 max-w-xl text-sm leading-relaxed text-muted">
-          Başvuru tarihleri ve detaylar için vakfımızla iletişime geçebilir ya
-          da doğrudan e-posta gönderebilirsiniz. Her yıl başvuru dönemi
-          duyurusu haberler bölümünde yayınlanır.
+          Başvuru formlarını vakıftan temin edebilir ya da e-posta ile
+          talep edebilirsiniz. Her yıl Eylül ayında başvuru duyurusu
+          haberler bölümünde yayınlanır. Ödemeler her ayın 5'inde banka
+          hesabınıza yapılır.
         </p>
         <div className="flex flex-wrap gap-4">
           <Link
@@ -120,6 +178,7 @@ export default function BurslarPage() {
           </Link>
         </div>
       </section>
+
     </div>
   );
 }

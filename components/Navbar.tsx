@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const navLinks = [
@@ -43,11 +44,21 @@ export default function Navbar() {
         aria-label="Ana navigasyon"
       >
         {/* Logo */}
-        <Link href="/" className="flex flex-col leading-tight">
-          <span className="text-xl font-bold tracking-tight text-accent">İKLEV</span>
-          <span className="text-[11px] font-normal text-muted tracking-wide">
-            İzmir Karşıyaka Lisesi Eğitim Vakfı
-          </span>
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/logo.png"
+            alt="İKLEV — İzmir Karşıyaka Lisesi Eğitim Vakfı"
+            width={40}
+            height={40}
+            className="h-10 w-10"
+            priority
+          />
+          <div className="flex flex-col leading-tight">
+            <span className="text-xl font-bold tracking-tight text-accent">İKLEV</span>
+            <span className="text-[11px] font-normal text-muted tracking-wide">
+              İzmir Karşıyaka Lisesi Eğitim Vakfı
+            </span>
+          </div>
         </Link>
 
         {/* Desktop menu */}

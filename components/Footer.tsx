@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const footerLinks = [
   { label: "Vakıf Senedi", href: "/vakif-senedi" },
@@ -14,9 +15,18 @@ export default function Footer() {
       aria-label="Site alt bilgisi"
     >
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row">
-        <p className="text-sm text-muted">
-          İKLEV Vakfı © {new Date().getFullYear()}
-        </p>
+        <div className="flex items-center gap-2.5">
+          <Image
+            src="/logo.png"
+            alt="İKLEV logosu"
+            width={28}
+            height={28}
+            className="h-7 w-7 opacity-70"
+          />
+          <p className="text-sm text-muted">
+            İKLEV Vakfı © {new Date().getFullYear()}
+          </p>
+        </div>
 
         <nav aria-label="Alt sayfa navigasyonu">
           <ul className="flex items-center gap-6" role="list">
