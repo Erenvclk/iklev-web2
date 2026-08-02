@@ -10,9 +10,11 @@ const securityHeaders = [
       "font-src 'self' https://fonts.gstatic.com; " +
       "img-src 'self' data: https://cdn.sanity.io; " +
       "connect-src 'self' https://cdn.sanity.io; " +
+      "object-src 'none'; " +
       "frame-ancestors 'none'; " +
       "base-uri 'self'; " +
-      "form-action 'self';",
+      "form-action 'self'; " +
+      "upgrade-insecure-requests;",
   },
   { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
   { key: "X-Content-Type-Options", value: "nosniff" },
