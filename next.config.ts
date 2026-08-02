@@ -37,6 +37,12 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // SRI (Subresource Integrity) ayarını buraya güvenli bir şekilde ekledik
+  experimental: {
+    sri: {
+      algorithm: 'sha384',
+    },
+  },
   async headers() {
     return [
       {
