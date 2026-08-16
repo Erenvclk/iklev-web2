@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getAyarlar } from "@/lib/queries";
+import DonationForm from "@/components/DonationForm";
 
 export const metadata: Metadata = {
   title: "Bağış Yap — İKLEV",
@@ -81,7 +82,7 @@ export default async function BagisPage() {
           </div>
         </section>
 
-        {/* Online Ödeme — Yakında */}
+        {/* Online ödeme */}
         <section aria-labelledby="online-heading">
           <h2
             id="online-heading"
@@ -90,15 +91,7 @@ export default async function BagisPage() {
             Online ödeme
           </h2>
 
-          <div className="flex h-full min-h-48 flex-col items-center justify-center rounded-lg border border-dashed border-border p-8 text-center">
-            <p className="mb-2 text-sm font-medium text-foreground">
-              Yakında
-            </p>
-            <p className="text-sm leading-relaxed text-muted">
-              Kredi kartı ile online bağış özelliği çok yakında hizmete
-              girecek.
-            </p>
-          </div>
+          <DonationForm />
         </section>
 
       </div>
