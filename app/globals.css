@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Nötr renkler */
+  --color-background: #ffffff;
+  --color-foreground: #0a0a0a;
+  --color-muted: #6b7280;
+  --color-border: #e5e7eb;
+  --color-surface: #f9fafb;
+
+  /* Ana vurgu: kırmızı — butonlar, logo, linkler, aksan çizgiler */
+  --color-accent: #b91c1c;
+  --color-accent-light: #fef2f2;
+  --color-accent-ring: #fecaca;
+
+  /* Yardımcı: yeşil — yalnızca blockquote sol çizgi ve aktif/başarılı durumu */
+  --color-positive: #15803d;
+  --color-positive-light: #f0fdf4;
+  --color-positive-ring: #bbf7d0;
+
+  /* Tipografi */
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 0.9375rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: 1.7;
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
